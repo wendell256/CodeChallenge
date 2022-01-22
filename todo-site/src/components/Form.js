@@ -11,9 +11,10 @@ function Form(props) {
     e.preventDefault();
 
     props.onSubmit({
+      id: Math.floor(Math.random() * 10000),
       text:input
     })
-    
+
     setInput("");
   };
 
