@@ -12,8 +12,20 @@ function List() {
     const newTodos = [todo, ...todos]
 
     setTodos(newTodos)
+  }
+
+  const removeTodo = id => {
+    const removeArr = [...todos].filter(todo => todo.id !== id)
     
-    console.log(todo, ...todos)
+    setTodos(removeArr);
+  }
+
+  const updateTodo =(todoId, newValue) =>{
+    if(!newValue.text || /^\s*$/.test(newValue.text)){
+      return
+    }
+
+    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
   }
 
   const completeTodo = id => {
@@ -30,7 +42,7 @@ function List() {
     <div>
       <h1> How's Your Day Looking?</h1>
       <Form onSubmit={addTodo}/>
-      <Todo todos={todos} completeTodo={completeTodo} />
+      <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
     </div>
   );
 }
