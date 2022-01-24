@@ -19,7 +19,8 @@ function FormTodo(props) {
 
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
-      text:input
+      text:input,
+      isComplete: false
     })
 
     setInput("");
@@ -27,7 +28,8 @@ function FormTodo(props) {
 
   return (
     <Form className="todo-form" onSubmit={handleSubmit}>
-      <input
+    <Form.Group className='mb-3'>
+      <Form.Control
         type="text"
         placeholder="Type Something To Do"
         value={input}
@@ -36,7 +38,8 @@ function FormTodo(props) {
         onChange={handleChange}
         ref={inputRef}
       />
-      <Button onClick={handleSubmit} className="todo-button">Add</Button>
+      </Form.Group>
+      <Button variant='primary' type='submit' className="todo-button">Add</Button>
     </Form>
   );
 }
