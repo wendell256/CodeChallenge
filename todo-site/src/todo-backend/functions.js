@@ -23,7 +23,11 @@ export function LoadTodos (){
   var todos = [];
   for(var key in items) {
     var value = items[key];
-    var completed = value.substring(0,value.indexOf("|"))
+    var completed = false
+    if (value.startsWith("true")){
+      completed = true
+    }
+   
     var input = value.substring(value.indexOf("|")+1)
     var todo = {
       id:key,
