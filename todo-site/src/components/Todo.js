@@ -15,6 +15,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     value: "",
   });
 
+
   const submitUpdate = (value) => {
     updateTodo(edit.id, value);
     setEdit({
@@ -22,6 +23,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
       value: "",
     });
   };
+
   if (edit.id) {
     return <FormTodo edit={edit} onSubmit={submitUpdate} />;
   }
@@ -32,7 +34,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         <Container ms-2 me-auto>
         <Row>
         <Col>
-          <Form.Check type='checkbox' checked = {todo.isComplete}/>
+          <Form.Check type='checkbox' checked = {todo.isComplete} onClick={() => completeTodo(todo.id)}/>
         </Col>
           <Col>{todo.text}</Col>
           <Col>
