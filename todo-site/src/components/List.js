@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FormTodo from "./FormTodo";
 import Todo from "./Todo";
 import Button from 'react-bootstrap/Button'
-import {DelSelected,AddItem,LoadTodos} from '../todo-backend/functions.js'
+import {DelSelected,AddItem,LoadTodos,changeCompleteState} from '../todo-backend/functions.js'
 
 function List() {
 
@@ -47,8 +47,9 @@ function List() {
   const completeTodo = id => {
     let updatedTodos = todos.map(todo => {
       if (todo.id === id){
-        console.log(todo.isComplete)
+        
         todo.isComplete = !todo.isComplete
+        changeCompleteState(todo.id)
       }
       return todo
     })

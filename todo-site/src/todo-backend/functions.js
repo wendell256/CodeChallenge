@@ -36,7 +36,20 @@ export function LoadTodos (){
     }
     todos = [...todos,todo]
   }
-  console.log(todos)
   return todos
  
+
+  
+}
+
+export function changeCompleteState(id){
+    var completed = true
+    var value = localStorage.getItem(id)
+    if (value.startsWith("true")){
+      completed = false
+    }
+   
+    value = value.substring(value.indexOf("|"))
+    value = completed+value;
+    localStorage.setItem(id,value)
 }
