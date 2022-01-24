@@ -34,7 +34,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         <Container ms-2 me-auto>
         <Row>
         <Col>
-          <Form.Check type='checkbox' checked = {todo.isComplete} onClick={() => completeTodo(todo.id)}/>
+          <Form.Check type='checkbox' checked = {todo.isComplete} onChange={() => completeTodo(todo.id)}/>
         </Col>
           <Col>{todo.text}</Col>
           <Col>
