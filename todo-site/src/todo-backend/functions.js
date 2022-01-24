@@ -12,21 +12,27 @@ export const EditItem = (key) =>{
   localStorage.removeItem(key);
 }
 
-/*export const LoadTodos = () =>{
-  const items = { ...localStorage };
-  console.log(items)
-  return []
-}*/
+
 
 export function LoadTodos (){
   const items = { ...localStorage };
   if (items.length <= 0){
     return []
   }
-  /*for(todo in items){
-    console.log(todo.id)
-  }*/
-  console.log(items)
-  return []
+  
+  var todos = [];
+  for(var key in items) {
+    var value = items[key];
+    var completed = value.substring(0,value.indexOf("|"))
+    var input = value.substring(value.indexOf("|")+1)
+    var todo = {
+      id:key,
+      text : input,
+      isComplete : completed
+    }
+    todos = [...todos,todo]
+  }
+  console.log(todos)
+  return todos
  
 }
