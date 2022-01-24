@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FormTodo from "./FormTodo";
 import Todo from "./Todo";
 import Button from 'react-bootstrap/Button'
-import {DelSelected,AddItem,LoadTodos,changeCompleteState} from '../todo-backend/functions.js'
+import {DelSelected,AddItem,LoadTodos,changeCompleteState,DelAll} from '../todo-backend/functions.js'
 
 function List() {
 
@@ -20,21 +20,37 @@ function List() {
   }
 
   const removeTodo = id => {
-    const removeArr = [...todos].filter(todo => todo.id !== id)
+    const removeArr = todos.filter(todo => todo.id !== id)
     DelSelected(id) //backend
-    setTodos(removeArr);
+    
+    
   }
 
   const removeSelectedTodo = todos => {
-    for(const todo of todos){
-      if (todo.isComplete){
-        removeTodo(todo.id) //frontend
-        
+    var arr = [...todos]
+    for(const item of todos){
+      if (item.isComplete){
+        var tempId = item.id
+        arr = arr.filter(todo => todo.id !== tempId) //frontend
+        DelSelected(tempId) //backend
       }
     }
-  
+    
+    setTodos(arr)
   }
-  
+
+  const removeAll = todos => {
+    //var arr = [...todos]
+    /*for(const item of todos){
+      if (item.isComplete){
+        var tempId = item.id
+        arr = arr.filter(todo => todo.id !== tempId) //frontend
+        
+      }
+    }*/
+    DelAll() //backend
+    setTodos([])
+  }
 
   const updateTodo =(todoId, newValue) =>{
     if(!newValue.text || /^\s*$/.test(newValue.text)){
@@ -65,7 +81,7 @@ function List() {
       <FormTodo onSubmit={addTodo}/>
       <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
       <Button  className="del-button" onClick={() => removeSelectedTodo(todos)}>Delete Selected</Button>
-      <Button  className="del-button">Delete All</Button>
+      <Button  className="del-button" onClick={() => removeAll(todos)}>Delete All</Button>
     </div>
   );
 }

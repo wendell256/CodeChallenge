@@ -53,3 +53,7 @@ export function changeCompleteState(id){
     value = completed+value;
     localStorage.setItem(id,value)
 }
+
+export function DelAll(){
+  localStorage.clear()
+}
