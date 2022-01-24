@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button'
 
-function Form(props) {
+function FormTodo(props) {
   const [input, setInput] = useState("");
 
   const inputRef = useRef(null)
@@ -24,19 +26,19 @@ function Form(props) {
   };
 
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
+    <Form className="todo-form" onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="What will you do today?"
+        placeholder="Type Something To Do"
         value={input}
         name="text"
         classname="todo-input"
         onChange={handleChange}
         ref={inputRef}
       />
-      <button className="todo-button">Add</button>
-    </form>
+      <Button onClick={handleSubmit} className="todo-button">Add</Button>
+    </Form>
   );
 }
 
-export default Form;
+export default FormTodo;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "./Form";
+import FormTodo from "./FormTodo";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 
@@ -18,7 +18,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 
   };
   if(edit.id){
-    return <Form edit={edit} onSubmit={submitUpdate} />;
+    return <FormTodo edit={edit} onSubmit={submitUpdate} />;
   }
 
   return todos.map((todo, index) => (
