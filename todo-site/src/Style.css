@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(66, 179, 231) 0%,
+    rgba(100, 115, 255, 1) 100%
+  );
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: left;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+.list-header {
+  margin: 10px 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.formtodo-form {
+  margin-bottom: 10px;
+}
+
+.FormTodo-input {
+  margin-bottom: 10px;
+ 
+  border-radius: 10px;
+  border: 2px solid rgb(66, 179, 231);
+  outline: none;
+  width: 100%;
+  background: transparent;
+  color: #fff;
+}
+
+.FormTodo-submitButton {
+  cursor: pointer;
+  background: rgb(66, 179, 231);
+  color: #fff;
+  width: 100%;
+  height: 70%;
+  margin-top: 3px;
+}
+
+.Todo-items{
+ align-items: center;
+margin-bottom: 3px;
+
+}
+
+
+.icons {
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 100px;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+}
+
+.Todo-badge{
+  margin-left: auto; 
+margin-right: -2%;
+  width:100%;
+}
+
+.Todo-checkbox{
+  margin-top: 4%;
+}
+
+.Todo-text{
+  text-align: left;
+}
+
+.del-button{
+  margin-top: 10px;
+  margin-left: 2px;
+}

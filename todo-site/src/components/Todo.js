@@ -36,16 +36,16 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   }*/
 
   return todos.map((todo, index) => (
-    <ListGroup>
-      <ListGroup.Item key={todo.id}>
-        <Container ms-2 me-auto>
+    <ListGroup  >
+      <ListGroup.Item key={todo.id} className='Todo-items' >
+       
         <Row>
         <Col>
-          <Form.Check type='checkbox' checked = {todo.isComplete} onChange={() => completeTodo(todo.id)}/>
+          <Form.Check className='Todo-checkbox' type='checkbox' checked = {todo.isComplete} onChange={() => completeTodo(todo.id)}/>
         </Col>
-          <Col>{todo.text}</Col>
-          <Col>
-            <Badge bg="secondary" >
+          <Col xs={8}>{todo.text}</Col>
+          <Col className='Todo-badge'>
+            <Badge bg="secondary" className='Todo-badge'>
               <div className="icons">
                 <RiCloseCircleLine
                   onClick={() => removeTodo(todo.id)}
@@ -59,7 +59,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             </Badge>
           </Col>
           </Row>
-        </Container>
+       
       </ListGroup.Item>
     </ListGroup>
   ));
