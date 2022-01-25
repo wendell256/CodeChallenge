@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CodeChallenge/static/css/main.d9ab12ea.css",
+    "main.js": "/CodeChallenge/static/js/main.dd6184fc.js",
+    "index.html": "/CodeChallenge/index.html",
+    "main.d9ab12ea.css.map": "/CodeChallenge/static/css/main.d9ab12ea.css.map",
+    "main.dd6184fc.js.map": "/CodeChallenge/static/js/main.dd6184fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9ab12ea.css",
+    "static/js/main.dd6184fc.js"
+  ]
+}
