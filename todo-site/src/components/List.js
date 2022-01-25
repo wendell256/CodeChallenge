@@ -60,7 +60,7 @@ function List() {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
-    console.log("llego aqui");
+    
     editTodo(todoId, newValue);
     setTodos((prev) =>
       prev.map((item) => (item.id === todoId ? newValue : item))

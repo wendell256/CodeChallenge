@@ -19,7 +19,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 
   const submitUpdate = (id, isComplete) => {
     var value = prompt('Please Edit Your To-Do')
-    console.log(value)
+
     updateTodo(id, value, isComplete);
     /*setEdit({
       id: ,
@@ -27,23 +27,16 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     });*/
   };
 
-  /*if (edit.id) {
-    //return <FormTodo edit={edit} onSubmit={submitUpdate} />;
-    //return submitUpdate(prompt('Please Edit Your To-Do'))
-    var value = prompt('Please Edit Your To-Do')
-    submitUpdate(value)
-    return
-  }*/
 
   return todos.map((todo, index) => (
     <ListGroup  >
       <ListGroup.Item key={todo.id} className='Todo-items' >
        
         <Row>
-        <Col>
+        <Col sm={1}>
           <Form.Check className='Todo-checkbox' type='checkbox' checked = {todo.isComplete} onChange={() => completeTodo(todo.id)}/>
         </Col>
-          <Col xs={8}>{todo.text}</Col>
+          <Col xs={8} >{todo.text}</Col>
           <Col className='Todo-badge'>
             <Badge bg="secondary" className='Todo-badge'>
               <div className="icons">

@@ -9,7 +9,7 @@
 body {
   background: linear-gradient(
     90deg,
-    rgb(66, 179, 231) 0%,
+    rgb(66, 179, 231) 50%,
     rgba(100, 115, 255, 1) 100%
   );
 }
@@ -17,7 +17,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
+  /*width: 520px;*/
+  width: 60%;
   min-height: 600px;
   background: #161a2b;
   text-align: left;
@@ -57,8 +58,9 @@ body {
 }
 
 .Todo-items{
- align-items: center;
+ text-align: left;
 margin-bottom: 3px;
+font-size: 20px;
 
 }
 
@@ -82,7 +84,7 @@ margin-bottom: 3px;
 
 .Todo-badge{
   margin-left: auto; 
-margin-right: -2%;
+  margin-right: 0;
   width:100%;
 }
 
@@ -98,3 +100,11 @@ margin-right: -2%;
   margin-top: 10px;
   margin-left: 2px;
 }
+
+@media (max-width: 600px) or  (min-resolution: 192dpi){
+  .App {
+    
+    width: 90%;
+    
+  }
+ }
