@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/CodeChallenge/static/css/main.0fdee478.css",
-    "main.js": "/CodeChallenge/static/js/main.f96a195d.js",
+    "main.css": "/CodeChallenge/static/css/main.b8bf8f21.css",
+    "main.js": "/CodeChallenge/static/js/main.f4a8eadc.js",
     "index.html": "/CodeChallenge/index.html",
-    "main.0fdee478.css.map": "/CodeChallenge/static/css/main.0fdee478.css.map",
-    "main.f96a195d.js.map": "/CodeChallenge/static/js/main.f96a195d.js.map"
+    "main.b8bf8f21.css.map": "/CodeChallenge/static/css/main.b8bf8f21.css.map",
+    "main.f4a8eadc.js.map": "/CodeChallenge/static/js/main.f4a8eadc.js.map"
   },
   "entrypoints": [
-    "static/css/main.0fdee478.css",
-    "static/js/main.f96a195d.js"
+    "static/css/main.b8bf8f21.css",
+    "static/js/main.f4a8eadc.js"
   ]
 }
