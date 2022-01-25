@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FormTodo from "./FormTodo";
 import Todo from "./Todo";
 import Button from 'react-bootstrap/Button'
-import {DelSelected,AddItem,LoadTodos,changeCompleteState,DelAll} from '../todo-backend/functions.js'
+import {DelSelected,AddItem,LoadTodos,changeCompleteState,DelAll,editTodo} from '../todo-backend/functions.js'
 
 function List() {
 
@@ -40,23 +40,22 @@ function List() {
   }
 
   const removeAll = todos => {
-    //var arr = [...todos]
-    /*for(const item of todos){
-      if (item.isComplete){
-        var tempId = item.id
-        arr = arr.filter(todo => todo.id !== tempId) //frontend
-        
-      }
-    }*/
+    
     DelAll() //backend
     setTodos([])
   }
 
-  const updateTodo =(todoId, newValue) =>{
+  const updateTodo =(todoId, Value, completeState) =>{
+    const newValue = {
+      id:todoId,
+      text:Value,
+      isComplete: completeState
+    }
     if(!newValue.text || /^\s*$/.test(newValue.text)){
       return
     }
-
+    console.log("llego aqui")
+    editTodo(todoId, newValue)
     setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
   }
 

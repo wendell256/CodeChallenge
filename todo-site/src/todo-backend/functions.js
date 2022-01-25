@@ -57,3 +57,7 @@ export function changeCompleteState(id){
 export function DelAll(){
   localStorage.clear()
 }
+
+export function editTodo(id,value){
+  localStorage.setItem(id,value)
+}

@@ -13,20 +13,27 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
+    isComplete: false
   });
 
 
-  const submitUpdate = (value) => {
-    updateTodo(edit.id, value);
-    setEdit({
-      id: null,
+  const submitUpdate = (id, isComplete) => {
+    var value = prompt('Please Edit Your To-Do')
+    console.log(value)
+    updateTodo(id, value, isComplete);
+    /*setEdit({
+      id: ,
       value: "",
-    });
+    });*/
   };
 
-  if (edit.id) {
-    return <FormTodo edit={edit} onSubmit={submitUpdate} />;
-  }
+  /*if (edit.id) {
+    //return <FormTodo edit={edit} onSubmit={submitUpdate} />;
+    //return submitUpdate(prompt('Please Edit Your To-Do'))
+    var value = prompt('Please Edit Your To-Do')
+    submitUpdate(value)
+    return
+  }*/
 
   return todos.map((todo, index) => (
     <ListGroup>
@@ -45,7 +52,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                   className="delete-icon"
                 />
                 <TiEdit
-                  onClick={() => setEdit({ id: todo.id, value: todo.text })}
+                  onClick={() => submitUpdate(todo.id, todo.isComplete)}
                   className="edit-icon"
                 />
               </div>
